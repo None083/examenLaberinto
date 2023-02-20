@@ -4,9 +4,6 @@
  */
 package daw;
 
-import java.util.Random;
-import org.apache.commons.lang3.RandomStringUtils;
-
 /**
  *
  * @author noelia
@@ -16,32 +13,12 @@ public class Casilla {
     private int fila;
     private int columna;
     private TipoCasilla tipoCasilla;
-    private int[][] matriz;
 
-    public Casilla(int fila, int columna) {
+    public Casilla(int fila, int columna, TipoCasilla tipoCasilla) {
         this.fila = fila;
         this.columna = columna;
-        this.matriz = new int[fila][columna];
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                matriz[i][j] = new Random().nextInt(TipoCasilla.values().length);
-            }
-        }
+        this.tipoCasilla = tipoCasilla;
     }
-
-    public Casilla() {
-    }
-
-    public static String casilla(TipoCasilla t, int[][] matriz) {
-        
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                return ;
-            }
-        }
-
-    }
-    
 
     public int getFila() {
         return fila;
@@ -54,5 +31,12 @@ public class Casilla {
     public TipoCasilla getTipoCasilla() {
         return tipoCasilla;
     }
+
+    @Override
+    public String toString() {
+        return "Casilla{" + "tipoCasilla=" + tipoCasilla + '}';
+    }
+
+    
 
 }

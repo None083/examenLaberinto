@@ -12,7 +12,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  */
 public class UtilesLaberinto {
     
-    public String[][] generadorLaberinto(int n){
+    public static String[][] generadorLaberinto(int n){
         String[][] matriz = new String[n][n];
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
@@ -22,8 +22,8 @@ public class UtilesLaberinto {
         return matriz;
     }
     
-    public Casilla[][] generadorLaberintoCasillas(String[][] letras){
-        Casilla[][] arrayCasillas;
+    public static Casilla[][] generadorLaberintoCasillas(String[][] letras){
+        Casilla[][] arrayCasillas = new Casilla[letras.length][letras.length];
         for (int i = 0; i < letras.length; i++) {
             for (int j = 0; j < letras[i].length; j++) {
                 if(letras[i][j] == "b"){
@@ -33,6 +33,7 @@ public class UtilesLaberinto {
                 }
             }
         }
+        return arrayCasillas;
     }
     
 }
